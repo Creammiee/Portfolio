@@ -13,13 +13,21 @@ const containerVariants = {
   },
 };
 
-const categoryVariants = {
-  hidden: { opacity: 0, y: 20 },
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 },
+    transition: { duration: 0.7, ease: "easeOut" },
   },
+};
+
+const barVariants = {
+  hidden: { width: 0 },
+  visible: (level: number) => ({
+    width: `${level * 100}%`,
+    transition: { duration: 0.9, ease: "easeOut" },
+  }),
 };
 
 const skillGroups = [
@@ -144,14 +152,15 @@ export default function Expertise() {
       {/* Cards */}
       <motion.div
         className="grid md:grid-cols-2 gap-8"
+        variants={containerVariants}
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
       >
         {skillGroups.map((group) => (
           <motion.div
             key={group.title}
-            variants={categoryVariants}
+            variants={cardVariants}
+            whileHover={{ y: -6 }}
             className="
               bg-white
               text-gray-900
@@ -178,12 +187,13 @@ export default function Expertise() {
                     </span>
                   </div>
 
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                     <motion.div
                       className="h-2 bg-blue-600 rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level * 100}%` }}
-                      transition={{ duration: 0.8 }}
+                      variants={barVariants}
+                      initial="hidden"
+                      animate="visible"
+                      custom={skill.level}
                     />
                   </div>
                 </div>
