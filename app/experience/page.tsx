@@ -53,8 +53,9 @@ const experiences = [
 export default function Experience() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-24">
+      {/* Title */}
       <motion.h2
-        className="text-3xl font-bold mb-6"
+        className="text-3xl font-bold mb-6 text-white"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -62,15 +63,18 @@ export default function Experience() {
         Professional Experience
       </motion.h2>
 
+      {/* Description */}
       <motion.p
-        className="text-gray-600 mb-12"
+        className="mb-12 text-gray-300"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        A mix of contract-based systems engineering, academic instruction, and technical leadership.
+        A mix of contract-based systems engineering, academic instruction, and
+        technical leadership.
       </motion.p>
 
+      {/* Experience Cards */}
       <motion.div
         className="space-y-6"
         initial="hidden"
@@ -80,10 +84,20 @@ export default function Experience() {
         {experiences.map((exp, idx) => (
           <motion.div
             key={idx}
-            className="border rounded-lg p-6 bg-white hover:shadow-md transition-shadow"
             variants={itemVariants}
+            className="
+              bg-white
+              text-gray-900
+              border
+              border-gray-200
+              rounded-xl
+              p-6
+              shadow-sm
+              hover:shadow-md
+              transition-shadow
+            "
           >
-            <div className="flex items-start justify-between mb-3">
+            <div className="flex items-start justify-between mb-3 gap-4">
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-gray-900">
                   {exp.title}
@@ -92,7 +106,8 @@ export default function Experience() {
                   {exp.company}
                 </p>
               </div>
-              <span className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
+
+              <span className="shrink-0 text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
                 {exp.period}
               </span>
             </div>
@@ -106,7 +121,7 @@ export default function Experience() {
             {exp.highlights.length > 0 && (
               <ul className="space-y-2 mt-3">
                 {exp.highlights.map((highlight, i) => (
-                  <li key={i} className="text-sm text-gray-600 flex gap-3">
+                  <li key={i} className="flex gap-3 text-sm text-gray-700">
                     <span className="text-blue-500 font-bold">•</span>
                     <span>{highlight}</span>
                   </li>

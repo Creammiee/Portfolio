@@ -119,24 +119,29 @@ const skillGroups = [
 export default function Expertise() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-24">
-        <motion.h2
-          className="text-3xl font-bold mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+      {/* Title */}
+      <motion.h2
+        className="text-3xl font-bold mb-6 text-white"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         Technical Expertise
       </motion.h2>
 
+      {/* Description */}
       <motion.p
-        className="text-gray-600 mb-12 max-w-3xl"
+        className="mb-12 max-w-3xl text-gray-300"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Languages, frameworks, and technologies across embedded systems, AI/ML, cloud, and full-stack development. Proficiency levels reflect depth of experience and active use.
+        Languages, frameworks, and technologies across embedded systems, AI/ML,
+        cloud, and full-stack development. Proficiency levels reflect depth of
+        experience and active use.
       </motion.p>
 
+      {/* Cards */}
       <motion.div
         className="grid md:grid-cols-2 gap-8"
         initial="hidden"
@@ -146,17 +151,33 @@ export default function Expertise() {
         {skillGroups.map((group) => (
           <motion.div
             key={group.title}
-            className="border rounded-lg p-6 bg-white"
             variants={categoryVariants}
+            className="
+              bg-white
+              text-gray-900
+              border
+              border-gray-200
+              rounded-xl
+              p-6
+              shadow-sm
+              hover:shadow-md
+              transition-shadow
+            "
           >
-            <h3 className="text-lg font-semibold mb-4">{group.title}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-900">
+              {group.title}
+            </h3>
+
             <div className="space-y-3">
               {group.skills.map((skill) => (
                 <div key={skill.name}>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-700">{skill.name}</span>
-                    <span className="text-gray-500">{Math.round(skill.level * 100)}%</span>
+                    <span className="text-gray-500">
+                      {Math.round(skill.level * 100)}%
+                    </span>
                   </div>
+
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <motion.div
                       className="h-2 bg-blue-600 rounded-full"
