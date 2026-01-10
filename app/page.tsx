@@ -16,7 +16,7 @@ const item = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 0.8 }, // ✅ FIXED (no ease string)
   },
 };
 
@@ -99,10 +99,7 @@ export default function Home() {
           </motion.div>
 
           {/* CTA */}
-          <motion.div
-            variants={item}
-            className="flex gap-4 mt-10"
-          >
+          <motion.div variants={item} className="flex gap-4 mt-10">
             <motion.a
               href="/projects"
               whileHover={{ scale: 1.05 }}
@@ -134,3 +131,4 @@ export default function Home() {
     </main>
   );
 }
+git

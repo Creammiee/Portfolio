@@ -18,7 +18,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.7 }, // ✅ FIXED
   },
 };
 
@@ -26,7 +26,7 @@ const barVariants = {
   hidden: { width: 0 },
   visible: (level: number) => ({
     width: `${level * 100}%`,
-    transition: { duration: 0.9, ease: "easeOut" },
+    transition: { duration: 0.9 }, // ✅ FIXED
   }),
 };
 
@@ -127,7 +127,6 @@ const skillGroups = [
 export default function Expertise() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-24">
-      {/* Title */}
       <motion.h2
         className="text-3xl font-bold mb-6 text-white"
         initial={{ opacity: 0, y: -20 }}
@@ -137,7 +136,6 @@ export default function Expertise() {
         Technical Expertise
       </motion.h2>
 
-      {/* Description */}
       <motion.p
         className="mb-12 max-w-3xl text-gray-300"
         initial={{ opacity: 0 }}
@@ -145,11 +143,9 @@ export default function Expertise() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         Languages, frameworks, and technologies across embedded systems, AI/ML,
-        cloud, and full-stack development. Proficiency levels reflect depth of
-        experience and active use.
+        cloud, and full-stack development.
       </motion.p>
 
-      {/* Cards */}
       <motion.div
         className="grid md:grid-cols-2 gap-8"
         variants={containerVariants}
@@ -161,21 +157,9 @@ export default function Expertise() {
             key={group.title}
             variants={cardVariants}
             whileHover={{ y: -6 }}
-            className="
-              bg-white
-              text-gray-900
-              border
-              border-gray-200
-              rounded-xl
-              p-6
-              shadow-sm
-              hover:shadow-md
-              transition-shadow
-            "
+            className="bg-white text-gray-900 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
           >
-            <h3 className="text-lg font-semibold mb-4 text-gray-900">
-              {group.title}
-            </h3>
+            <h3 className="text-lg font-semibold mb-4">{group.title}</h3>
 
             <div className="space-y-3">
               {group.skills.map((skill) => (
