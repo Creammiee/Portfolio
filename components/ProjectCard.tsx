@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 type ProjectCardProps = {
   title: string;
   summary: string;
-  role: string;
   tech: string[];
   impact?: string;
+  features?: string[];
 };
 
 export default function ProjectCard({
   title,
   summary,
-  role,
   tech,
   impact,
+  features,
 }: ProjectCardProps) {
   return (
     <motion.article
@@ -32,6 +32,9 @@ export default function ProjectCard({
         shadow-sm
         hover:shadow-md
         transition-shadow
+        h-full
+        flex
+        flex-col
       "
     >
       <h3 className="text-xl font-semibold mb-2 text-gray-900">
@@ -41,11 +44,6 @@ export default function ProjectCard({
       <p className="text-gray-700 mb-4 leading-relaxed">
         {summary}
       </p>
-
-      <div className="text-sm text-gray-800 mb-4">
-        <strong className="font-semibold text-gray-900">Role:</strong>{" "}
-        {role}
-      </div>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {tech.map((t) => (
@@ -67,8 +65,22 @@ export default function ProjectCard({
         ))}
       </div>
 
+      {features && features.length > 0 && (
+        <div className="mb-4">
+          <strong className="text-sm font-semibold text-gray-900">Key Features:</strong>
+          <ul className="mt-2 space-y-1">
+            {features.map((f) => (
+              <li key={f} className="text-sm text-gray-700 flex items-start gap-2">
+                <span className="text-blue-500 mt-0.5 shrink-0">•</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {impact && (
-        <p className="text-sm text-gray-600 leading-relaxed">
+        <p className="text-sm text-gray-600 leading-relaxed mt-auto pt-4">
           {impact}
         </p>
       )}

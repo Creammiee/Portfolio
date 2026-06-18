@@ -56,46 +56,59 @@ export default function Home() {
             variants={item}
             className="text-2xl font-semibold text-blue-400 mb-8"
           >
-            Embedded Systems Engineer & Full-Stack Developer
+            Full-Stack Developer · Embedded Systems Engineer · AI Engineer
           </motion.p>
 
           {/* INTRO */}
           <motion.p
             variants={item}
-            className="text-lg text-gray-200 max-w-3xl mb-8 leading-relaxed"
+            className="text-lg text-gray-300 max-w-2xl mb-10 leading-relaxed"
           >
-            I build production-ready systems across robotics, computer vision,
-            and cloud-connected software — specializing in end-to-end integration
-            from firmware to cloud.
+            Full-Stack Developer and AI Engineer with experience in building web
+            applications, AI-powered systems, automation solutions, and computer
+            vision projects. I specialize in developing scalable applications
+            using modern technologies such as React, Next.js, Node.js, Python,
+            PostgreSQL, and cloud-based services.
           </motion.p>
 
           {/* HIGHLIGHTS */}
-          <motion.div variants={item} className="space-y-5 max-w-3xl">
+          <motion.div variants={item} className="space-y-4 max-w-2xl mb-10">
             <motion.div
-              whileHover={{ x: 8 }}
-              className="p-4 rounded-lg bg-white text-gray-900"
+              whileHover={{ x: 6 }}
+              className="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"
             >
-              My expertise spans hardware–firmware integration, AI/ML deployment
-              on edge devices, backend API design, and frontend dashboards.
+              <span className="text-blue-400 text-lg mt-0.5">🤖</span>
+              <p className="text-gray-200 text-sm leading-relaxed">
+                Background includes AI models, LLM integrations, AI agents,
+                workflow automation, APIs, and machine learning solutions.
+                Focused on transforming complex business requirements into
+                efficient, user-friendly software.
+              </p>
             </motion.div>
 
             <motion.div
-              whileHover={{ x: 8 }}
-              className="p-4 rounded-lg bg-white text-gray-900"
+              whileHover={{ x: 6 }}
+              className="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"
             >
-              I’ve delivered autonomous rovers, drones, IoT platforms, kiosk
-              software, and predictive ML systems under contract.
+              <span className="text-blue-400 text-lg mt-0.5">🔭</span>
+              <p className="text-gray-200 text-sm leading-relaxed">
+                Experienced in computer vision projects using Raspberry Pi,
+                YOLO, and IoT devices, combining hardware and software to
+                build intelligent, real-world systems.
+              </p>
             </motion.div>
 
-            <motion.p
-              className="text-sm text-gray-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
+            <motion.div
+              whileHover={{ x: 6 }}
+              className="flex items-start gap-4 p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"
             >
-              ✓ Client identities and proprietary implementations are protected
-              under NDA.
-            </motion.p>
+              <span className="text-blue-400 text-lg mt-0.5">💡</span>
+              <p className="text-gray-200 text-sm leading-relaxed">
+                Passionate about continuous learning, solving challenging
+                problems, and leveraging emerging technologies to build
+                innovative products that make a meaningful impact.
+              </p>
+            </motion.div>
           </motion.div>
 
           {/* CTA */}

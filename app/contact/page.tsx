@@ -60,6 +60,64 @@ export default function Contact() {
                 <span>📱</span>
                 <span>+63-9691988113</span>
               </div>
+
+              <div className="flex items-center gap-2 mt-2">
+                <span>💬</span>
+                <a
+                  href="https://wa.me/639691988113"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  WhatsApp
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 mt-2">
+                <span>📲</span>
+                <a
+                  href="viber://chat?number=%2B639691988113"
+                  className="underline"
+                >
+                  Viber
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 mt-2">
+                <span>✈️</span>
+                <a
+                  href="https://t.me/+639691988113"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  Telegram
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 mt-2">
+                <span>🐙</span>
+                <a
+                  href="https://github.com/Creammiee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  GitHub
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 mt-2">
+                <span>💼</span>
+                <a
+                  href="https://www.linkedin.com/in/creammiee/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </motion.div>
