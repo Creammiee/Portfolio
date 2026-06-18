@@ -40,7 +40,7 @@ export default function Projects() {
 
 
           <motion.h1 className="text-3xl font-bold mb-4 text-white">
-            Selected Case Studies
+            Projects
           </motion.h1>
 
 
@@ -50,7 +50,7 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A selection of real-world projects spanning embedded systems, web platforms, and machine learning — each built end-to-end with a focus on quality and impact.
+            A selection of real-world systems and platforms I&apos;ve built, spanning embedded systems, web applications, AI/ML, and automation.
           </motion.p>
         </motion.div>
 
