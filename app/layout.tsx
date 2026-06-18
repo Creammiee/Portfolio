@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
 
 export const metadata: Metadata = {
   title: "Timothy Jay Marquez | Full-Stack Dev · Embedded Systems · AI Engineer",
@@ -19,8 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gradient-to-br from-slate-900 via-slate-950 to-gray-900 text-slate-100 antialiased pt-16">
+        <BackgroundBlobs />
         <Navbar />
-        {children}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

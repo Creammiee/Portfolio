@@ -17,10 +17,7 @@ export default function ContactForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,12 +26,9 @@ export default function ContactForm() {
     setError("");
 
     try {
-      // Using Web3Forms API (free, no account needed)
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: "124e9fb5-8fe9-402b-aa6a-62c4b3e8a4ff",
           to_email: "creammiee.dev@gmail.com",
@@ -61,18 +55,21 @@ export default function ContactForm() {
     }
   };
 
+  const inputClass =
+    "w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-100 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all";
+
+  const labelClass = "block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1.5";
+
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="space-y-4 max-w-2xl"
-      initial={{ opacity: 0, y: 20 }}
+      className="space-y-4"
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
     >
       <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-2">
-          Name
-        </label>
+        <label htmlFor="name" className={labelClass}>Name</label>
         <input
           type="text"
           id="name"
@@ -80,15 +77,13 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Your name"
+          className={inputClass}
+          placeholder="Your full name"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
-          Email
-        </label>
+        <label htmlFor="email" className={labelClass}>Email</label>
         <input
           type="email"
           id="email"
@@ -96,15 +91,13 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className={inputClass}
           placeholder="your.email@example.com"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
-          Message
-        </label>
+        <label htmlFor="message" className={labelClass}>Message</label>
         <textarea
           id="message"
           name="message"
@@ -112,39 +105,39 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Your message..."
+          className={inputClass}
+          placeholder="Tell me about your project or inquiry..."
         />
       </div>
 
       {error && (
         <motion.p
-          className="text-red-600 text-sm"
+          className="text-red-400 text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          {error}
+          ✕ {error}
         </motion.p>
       )}
 
       {submitted && (
         <motion.p
-          className="text-green-600 text-sm"
+          className="text-green-400 text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          ✓ Message sent successfully!
+          ✓ Message sent successfully! I&apos;ll get back to you soon.
         </motion.p>
       )}
 
       <motion.button
         type="submit"
         disabled={loading || submitted}
-        className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.97 }}
+        className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-500 disabled:bg-gray-700 disabled:text-gray-500 text-white font-semibold rounded-xl transition-all text-sm tracking-wide"
       >
-        {loading ? "Sending..." : submitted ? "Message Sent!" : "Send Message"}
+        {loading ? "Sending..." : submitted ? "Message Sent ✓" : "Send Message →"}
       </motion.button>
     </motion.form>
   );

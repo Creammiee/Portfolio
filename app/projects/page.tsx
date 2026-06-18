@@ -39,13 +39,13 @@ export default function Projects() {
         >
 
 
-          <motion.h1 className="text-5xl font-bold mb-4 text-white">
+          <motion.h1 className="text-3xl font-bold mb-4 text-white">
             Selected Case Studies
           </motion.h1>
 
 
           <motion.p
-            className="text-lg text-gray-300 mb-12 max-w-3xl leading-relaxed"
+            className="text-sm text-gray-300 mb-10 max-w-3xl leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}

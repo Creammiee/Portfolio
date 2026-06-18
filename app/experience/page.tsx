@@ -69,6 +69,17 @@ const experiences = [
       "Supervised and guided junior technicians on repair workflows and quality standards",
     ],
   },
+  {
+    title: "IT Intern",
+    company: "DepEd Schools Division Office – Cagayan",
+    period: "Jun 2022 – Aug 2022",
+    type: "Internship",
+    highlights: [
+      "Assisted in network setup, configuration, and basic troubleshooting across office infrastructure",
+      "Performed routine IT maintenance and hardware repairs on office computers and peripherals",
+      "Provided on-call technical consultation and support to teaching staff on software, devices, and connectivity issues",
+    ],
+  },
 ];
 
 export default function Experience() {
