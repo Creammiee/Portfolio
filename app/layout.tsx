@@ -3,9 +3,12 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Timothy Jay Marquez | Software Engineer",
+  title: "Timothy Jay Marquez | Full-Stack Dev · Embedded Systems · AI Engineer",
   description:
-    "Software Engineer specializing in AI, Machine Learning, Embedded Systems, and Full-Stack Development.",
+    "Full-Stack Developer, Embedded Systems Engineer, and AI Engineer specializing in web applications, AI-powered systems, computer vision, and automation solutions.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
